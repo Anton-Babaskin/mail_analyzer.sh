@@ -131,9 +131,9 @@ chmod +x mail_analyzer.sh
 === ТОП-100 ВХОДЯЩИХ ДОМЕНОВ ===
 Количество | Домен отправителя
 -----------|-------------------
-68         | mx1.llc-nsc.ru
-59         | mx1.rwsp.ru
-57         | mail.oilrusi.ru
+68         | mx1.google.com
+59         | mx2.dib.ae
+57         | mail.isbank.com
 ```
 
 ### Маршруты писем
