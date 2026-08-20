@@ -1,0 +1,25 @@
+Aug 20 09:00:01 mx1 postfix/smtpd[1001]: connect from mail.gmail.com[209.85.128.1]
+Aug 20 09:00:02 mx1 postfix/smtpd[1001]: A1B2C3D4E5: client=mail.gmail.com[209.85.128.1]
+Aug 20 09:00:02 mx1 postfix/cleanup[1002]: A1B2C3D4E5: message-id=<x1@gmail.com>
+Aug 20 09:00:02 mx1 postfix/qmgr[900]: A1B2C3D4E5: from=<alice@gmail.com>, size=24576, nrcpt=1 (queue active)
+Aug 20 09:00:03 mx1 postfix/lmtp[1003]: A1B2C3D4E5: to=<bob@example.com>, relay=127.0.0.1[127.0.0.1]:24, delay=1.1, delays=0.5/0/0.1/0.5, dsn=2.0.0, status=sent (250 2.0.0 <bob@example.com> tHkjIQ Saved)
+Aug 20 09:00:03 mx1 postfix/qmgr[900]: A1B2C3D4E5: removed
+Aug 20 09:05:10 mx1 postfix/qmgr[900]: B2C3D4E5F6: from=<carol@example.com>, size=1048576, nrcpt=2 (queue active)
+Aug 20 09:05:11 mx1 postfix/smtp[1010]: B2C3D4E5F6: to=<dave@yandex.ru>, relay=mx.yandex.ru[77.88.21.249]:25, delay=2.3, dsn=2.0.0, status=sent (250 ok 1755678311 qid)
+Aug 20 09:05:12 mx1 postfix/smtp[1010]: B2C3D4E5F6: to=<erin@mail.ru>, relay=mxs.mail.ru[94.100.180.31]:25, delay=2.9, dsn=2.0.0, status=sent (250 OK id=1abcde)
+Aug 20 09:05:12 mx1 postfix/qmgr[900]: B2C3D4E5F6: removed
+Aug 20 10:15:00 mx1 postfix/qmgr[900]: C3D4E5F6A7: from=<carol@example.com>, size=8192, nrcpt=1 (queue active)
+Aug 20 10:15:01 mx1 postfix/smtp[1020]: C3D4E5F6A7: to=<nobody@yandex.ru>, relay=mx.yandex.ru[77.88.21.249]:25, delay=1.0, dsn=5.1.1, status=bounced (host mx.yandex.ru[77.88.21.249] said: 550 5.1.1 No such user (in reply to RCPT TO command))
+Aug 20 10:15:01 mx1 postfix/qmgr[900]: C3D4E5F6A7: removed
+Aug 20 10:30:00 mx1 postfix/qmgr[900]: D4E5F6A7B8: from=<carol@example.com>, size=4096, nrcpt=1 (queue active)
+Aug 20 10:30:05 mx1 postfix/smtp[1030]: D4E5F6A7B8: to=<slow@slowdomain.tld>, relay=none, delay=30, dsn=4.4.1, status=deferred (connect to slowdomain.tld[10.0.0.9]:25: Connection timed out)
+Aug 20 11:00:00 mx1 postfix/qmgr[900]: E5F6A7B8C9: from=<>, size=2048, nrcpt=1 (queue active)
+Aug 20 11:00:01 mx1 postfix/smtp[1040]: E5F6A7B8C9: to=<alice@gmail.com>, relay=gmail-smtp-in.l.google.com[142.250.1.27]:25, delay=1.5, dsn=2.0.0, status=sent (250 2.0.0 OK)
+Aug 20 11:00:01 mx1 postfix/qmgr[900]: E5F6A7B8C9: removed
+Aug 20 11:30:00 mx1 postfix/qmgr[900]: F6A7B8C9D0: from=<news@gmail.com>, size=512000, nrcpt=1 (queue active)
+Aug 20 11:30:02 mx1 postfix/virtual[1050]: F6A7B8C9D0: to=<team@example.com>, relay=virtual, delay=0.2, dsn=2.0.0, status=sent (delivered to maildir)
+Aug 20 11:30:02 mx1 postfix/qmgr[900]: F6A7B8C9D0: removed
+Aug 20 12:00:00 mx1 postfix/qmgr[900]: 0123456789A: from=<bulk@mail.ru>, size=16384, nrcpt=1 (queue active)
+Aug 20 12:00:01 mx1 postfix/local[1060]: 0123456789A: to=<root@mx1.example.com>, orig_to=<root>, relay=local, delay=0.1, dsn=2.0.0, status=sent (delivered to mailbox)
+Aug 20 12:00:01 mx1 postfix/qmgr[900]: 0123456789A: removed
+Aug 20 12:30:00 mx1 postfix/smtpd[1070]: NOQUEUE: reject: RCPT from unknown[1.2.3.4]: 554 5.7.1 Service unavailable
